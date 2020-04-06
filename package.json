@@ -1,0 +1,92 @@
+{
+  "name": "react-constate-template",
+  "description": "Production ready setup for React + Constate",
+  "version": "3.0.0",
+  "readme": "Readme.md",
+  "license": "MIT",
+  "authors": [
+    "Ivan Dimanov <react-constate-template@idimanov.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanDimanov/react-constate-template.git"
+  },
+  "engines": {
+    "node": ">=12.13.0",
+    "npm": ">=6.12.0"
+  },
+  "dependencies": {
+    "@material-ui/core": "4.9.9",
+    "axios": "0.19.2",
+    "clsx": "1.1.0",
+    "constate": "2.0.0",
+    "node-sass": "4.13.1",
+    "prop-types": "15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-fast-compare": "3.0.1",
+    "react-hook-form": "5.3.1",
+    "react-hook-form-input": "1.1.10",
+    "react-router-dom": "5.1.2",
+    "react-scripts": "3.4.1",
+    "yup": "0.28.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "prettierscan": "prettier ./src/**/*.js --check --write",
+    "storybook": "start-storybook -p 6006",
+    "build:artifacts:clear": "rimraf ./artifacts",
+    "build:artifacts:storybook": "build-storybook --output-dir=./artifacts/storybook --quiet",
+    "build:artifacts:coverage": "CI=true npm test -- --coverage --coverageDirectory=./artifacts/coverage",
+    "build:artifacts:index": "marked --input=./README.md --output=./artifacts/index.html",
+    "build:artifacts": "npm run build:artifacts:clear && npm run build:artifacts:storybook && npm run build:artifacts:coverage && npm run build:artifacts:index"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "7.9.0",
+    "@storybook/addon-actions": "5.3.18",
+    "@storybook/addon-console": "1.2.1",
+    "@storybook/addon-docs": "5.3.18",
+    "@storybook/addon-knobs": "5.3.18",
+    "@storybook/addon-links": "5.3.18",
+    "@storybook/addon-storysource": "5.3.18",
+    "@storybook/addon-viewport": "5.3.18",
+    "@storybook/addons": "5.3.18",
+    "@storybook/react": "5.3.18",
+    "@welldone-software/why-did-you-render": "4.0.6",
+    "babel-loader": "8.1.0",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.2",
+    "eslint-config-google": "0.14.0",
+    "eslint-plugin-react": "7.19.0",
+    "husky": "4.2.3",
+    "marked": "0.8.2",
+    "react-router-test-context": "0.1.0",
+    "react-test-renderer": "16.13.1",
+    "rimraf": "3.0.2",
+    "storybook": "5.3.18"
+  }
+}

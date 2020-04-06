@@ -1,0 +1,30 @@
+import {Meta, Preview, Story, Props} from '@storybook/addon-docs/blocks';
+import {BrowserRouter as Router} from 'react-router-dom'
+import {PersonsProvider} from 'contexts/persons'
+
+import PulbicLayout from './index';
+
+
+<Meta
+  title='Design System|Layouts/PulbicLayout'
+  component={PulbicLayout}
+/>
+
+
+# Layouts/PulbicLayout
+This is the layout used by any user - no auth required.
+
+
+#### Default
+
+<Preview>
+  <Story name='Default'>
+    <div style={{ border: '1px solid lightgray', height: 600 }}>
+      <PersonsProvider>
+        <Router>
+          <PulbicLayout/>
+        </Router>
+      </PersonsProvider>
+    </div>
+  </Story>
+</Preview>
